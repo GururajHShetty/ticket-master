@@ -28,3 +28,12 @@ export const setCustomer = (formData,props) => {
             })
     }
 }
+
+export const updateCustomer = (formData,id) => {
+    return dispatch => {
+        axios.put(`/customers/${id}`,formData)
+            .then(response => {
+                dispatch(getInitialData())
+            })
+    }
+}

@@ -1,15 +1,14 @@
 import React from 'react'
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { connect } from 'react-redux'
-import {setCustomer} from '../../actions/customer'
 
 class CustomerForm extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            name: '',
-            email: '',
-            mobile: ''
+            name: this.props.customer ? this.props.customer.name : '',
+            email: this.props.customer ? this.props.customer.email : '',
+            mobile:this.props.customer ? this.props.customer.mobile : ''
         }
     }
 
@@ -27,13 +26,13 @@ class CustomerForm extends React.Component {
             email: this.state.email,
             mobile: this.state.mobile
         }
-        this.props.dispatch(setCustomer(formData,this.props))
+        this.props.handleSubmit(formData)
     }
 
     render() {
+        // {console.log(this.props.customer)}
         return (
             <div>
-                <h4>Add Customer</h4>
                 <Form onSubmit={this.handleSubmit}>
                     <Col md={6}>
                         <FormGroup>
@@ -60,10 +59,4 @@ class CustomerForm extends React.Component {
     }
 }
 
-const mapStateToPrps = state => {
-    return {
-        customer: state.customers
-    }
-}
-
-export default connect(mapStateToPrps)(CustomerForm)
+export default connect()(CustomerForm)

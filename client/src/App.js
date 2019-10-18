@@ -6,6 +6,7 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap'
 
 import CustomerList from './components/customers/List'
 import CustomerShow from './components/customers/Show'
+import CustomerEdit from './components/customers/Edit'
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         </Breadcrumb>
 
         <Switch>
-        <Route path="/customers/:id" component={CustomerShow}/>
+        <Route path="/customers/:id" component={CustomerShow} exact={true} />
+        <Route path="/customers/edit/:id" component={CustomerEdit}/>
         <Route path="/customers" component={CustomerList} />
         </Switch>
       </BrowserRouter>
