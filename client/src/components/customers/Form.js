@@ -27,6 +27,11 @@ class CustomerForm extends React.Component {
             mobile: this.state.mobile
         }
         this.props.handleSubmit(formData)
+        this.setState({
+            name:'',
+            email:'',
+            mobile:''
+        })
     }
 
     render() {

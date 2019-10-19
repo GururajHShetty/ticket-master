@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Table } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import CustomerForm from './Form'
 import {setCustomer} from '../../actions/customer'
@@ -13,9 +12,10 @@ class CustomerList extends React.Component {
 
     render() {
         return (
-            <div>
+                <div className="row">
+                <div className="col-md-8 mb-4">
                 <h4>Listing Customers - {this.props.customers.length}</h4>
-                <Table striped>
+                <table className="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -28,7 +28,7 @@ class CustomerList extends React.Component {
                         {
                             this.props.customers.map((customer, index) => {
                                 return <tr key={customer._id} >
-                                    <th scope="row">{index}</th>
+                                    <th scope="row">{index+1}</th>
                                     <td><Link to={`/customers/${customer._id}`} >{customer.name}</Link></td>
                                     <td>{customer.email}</td>
                                     <td>{customer.mobile}</td>
@@ -36,10 +36,13 @@ class CustomerList extends React.Component {
                             })
                         }
                     </tbody>
-                </Table>
+                </table>
+                </div>
+                <div className="col-md-4">
                 <h4>Add Customer</h4>
-                <CustomerForm handleSubmit={this.handleSubmit}/>
-            </div>
+                <CustomerForm handleSubmit={this.handleSubmit} />
+                </div>
+                </div>
         )
     }
 }
