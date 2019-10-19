@@ -1,12 +1,14 @@
 import { createStore, combineReducers,applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import costomersReducers from '../reducers/customersReducer'
-import departmentsReducers from '../reducers/departmentsReducer'
+import costomersReducer from '../reducers/customersReducer'
+import departmentsReducer from '../reducers/departmentsReducer'
+import employeesReducer from '../reducers/employeesReducer'
 
 const configureStore = () => {
     const store = createStore(combineReducers({
-        customers : costomersReducers,
-        departments : departmentsReducers
+        customers : costomersReducer,
+        departments : departmentsReducer,
+        employees : employeesReducer
     }),applyMiddleware(thunk))
     return store
 }

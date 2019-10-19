@@ -16,3 +16,12 @@ export const removeDepartment = id => {
             })
     }
 }
+
+export const addDepartment = formData => {
+    return dispatch => {
+        axios.post(`/departments`, formData)
+            .then(response => {
+                dispatch(getInitialData())
+            })
+    }
+}

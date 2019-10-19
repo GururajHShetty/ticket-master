@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {removeDepartment} from '../../actions/department'
+import DepartmentForm from './Form'
 
 function DepartmentList(props) {
 
@@ -12,7 +13,7 @@ function DepartmentList(props) {
         <div className="container" >
             <div className="row">
                 <div className="col-md-6" >
-                    <h4>Listing Departments -{props.departments.length}</h4>
+                    {/* <h4>Listing Departments -{props.departments.length}</h4> */}
                     <table className="table table-striped table-bordered" >
                         <thead>
                             <tr>
@@ -36,6 +37,9 @@ function DepartmentList(props) {
                             }
                         </tbody>
                     </table>
+                </div>
+                <div className="col-md-4 offset-md-2" >
+                <DepartmentForm />
                 </div>
             </div>
         </div>
