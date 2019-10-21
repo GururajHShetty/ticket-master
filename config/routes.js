@@ -5,7 +5,14 @@ const customerController = require('../app/controllers/customerController')
 const departmentController = require('../app/controllers/departmentController')
 const employeeController = require('../app/controllers/employeeController')
 const ticketController = require('../app/controllers/ticketController')
+const userController = require('../app/controllers/userController')
+const {authenticateUser} = require('../middlewares/authenticattion')
 
+
+router.post('/users/registor',userController.registor)
+router.post('/users/login',userController.login)
+router.get('/users/account',authenticateUser,userController.account)
+router.delete('/users/logout',authenticateUser,userController.logout)
 
 router.get('/customers', customerController.list)
 router.post('/customers',customerController.create)
