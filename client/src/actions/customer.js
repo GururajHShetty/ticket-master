@@ -1,6 +1,7 @@
 import axios from '../config/axios'
 import { getInitialData } from './InitialData'
 import { setErrors } from './errors'
+import { clearErrors } from './errors'
 
 
 export const setCustomers = customers => {
@@ -33,6 +34,7 @@ export const setCustomer = (formData, props) => {
                     dispatch(setErrors(response.data.errors, 'customer'))
                 } else {
                     dispatch(getInitialData())
+                    dispatch(clearErrors())
                 }
             })
     }

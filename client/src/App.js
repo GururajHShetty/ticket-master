@@ -7,7 +7,9 @@ import isEmpty from 'lodash/isEmpty'
 import UserRegistration from './components/Users/Registration'
 import UserLogin from './components/Users/Login'
 
-import TicketMasterDashboard from './components/Dashboard'
+// import TicketMasterDashboard from './components/Dashboard'
+import HomePage from './components/Home/Home'
+
 import CustomerList from './components/customers/List'
 import CustomerShow from './components/customers/Show'
 import CustomerEdit from './components/customers/Edit'
@@ -23,6 +25,7 @@ import EmployeeEdit from './components/Employees/Edit'
 import TicketList from './components/Tickets/List'
 import TicketShow from './components/Tickets/Show'
 import TicketEdit from './components/Tickets/Edit'
+import TicketResolvedList from './components/Tickets/ResolvedList'
 
 function App(props) {
   return (
@@ -39,7 +42,7 @@ function App(props) {
             </div>) : (
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item active" aria-current="page"><Link to="/dashboard">Home</Link></li>
+                  <li className="breadcrumb-item active" aria-current="page"><Link to="/home">Home</Link></li>
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/customers">Customers</Link></li>
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/departments">Departments</Link></li>
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/employees">Employees</Link></li>
@@ -54,7 +57,7 @@ function App(props) {
           <Route path="/" component={UserRegistration} exact={true} />
           <Route path="/users/login" component={UserLogin} exact={true} />
 
-          <Route path="/dashboard" component={TicketMasterDashboard} />
+          <Route path="/home" component={HomePage} />
 
           <Route path="/customers/:id" component={CustomerShow} exact={true} />
           <Route path="/customers/edit/:id" component={CustomerEdit} />
@@ -66,6 +69,7 @@ function App(props) {
           <Route path="/employee/edit/:id" component={EmployeeEdit} exact={true} />
           <Route path="/employees" component={EmployeesList} />
 
+          <Route path="/tickets/resolved" component={TicketResolvedList} exact={true}/>
           <Route path="/tickets/:id" component={TicketShow} exact={true} />
           <Route path="/ticket/edit/:id" component={TicketEdit} exact={true} />
           <Route path="/tickets" component={TicketList}/>

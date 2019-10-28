@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import {removeTicket} from '../../actions/tickets'
+import { removeTicket } from '../../actions/tickets'
 
 class TicketShow extends React.Component {
-    
+
     handleRemove = id => {
         // console.log(id)
         this.props.dispatch(removeTicket(id))
@@ -54,13 +54,17 @@ class TicketShow extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="form-check form-check-inline">
-                                    <Link className="btn btn-success" to={`/ticket/edit/${this.props.ticket._id}`}>Update</Link>
+                                    <div className="form-group">
+                                        <label htmlFor="resolution">Resolution</label>
+                                        <textarea type="text" className="form-control" id="resolution" value={this.props.ticket.resolution} name="resolution" onChange={this.handleChange} placeholder="resolution" readOnly/>
                                     </div>
                                     <div className="form-check form-check-inline">
-                                    <button className="btn btn-danger" onClick={(e) => {
-                                        this.handleRemove(this.props.ticket._id)
-                                    }}>Reject</button>
+                                        <Link className="btn btn-success" to={`/ticket/edit/${this.props.ticket._id}`}>Update</Link>
+                                    </div>
+                                    <div className="form-check form-check-inline">
+                                        <button className="btn btn-danger" onClick={(e) => {
+                                            this.handleRemove(this.props.ticket._id)
+                                        }}>Reject</button>
                                     </div>
                                 </form>
                             </div>

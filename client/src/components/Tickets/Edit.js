@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import TicketForm from './Form'
-// import {updateEmployee} from '../../actions/employees'
+import { updateTicket } from '../../actions/tickets'
 
 class TicketEdit extends React.Component {
 
-    // handleSubmit = formData => {
-    //     this.props.dispatch(updateEmployee(formData, this.props.employee._id,this.props))
-    // }
+    handleSubmit = formData => {
+        this.props.dispatch(updateTicket(formData, this.props.ticket._id, this.props))
+    }
 
     render() {
         return (
@@ -17,7 +17,7 @@ class TicketEdit extends React.Component {
                     <TicketForm ticket={this.props.ticket} handleSubmit={this.handleSubmit} />
                 </div>
                 ) : (
-                <div className ="spinner-border text-success" role="status"></div>)}
+                        <div className="spinner-border text-success" role="status"></div>)}
             </div>
         )
     }

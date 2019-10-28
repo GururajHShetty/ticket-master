@@ -1,7 +1,7 @@
 const Ticket = require('../model/tickets')
 
 module.exports.list = (req, res) => {
-    Ticket.find({userId : req.user._id}).populate('department customer employee')
+    Ticket.find({ userId: req.user._id }).populate('department customer employee')
         .then(tickets => {
             if (tickets) {
                 res.json(tickets)
@@ -37,23 +37,17 @@ module.exports.create = (req, res) => {
 module.exports.update = (req, res) => {
     const { id } = req.params
     const { body } = req
-    Ticket.findOne({ code: id })
+    Ticket.findByIdAndUpdate(id, body, { new: true })
         .then(ticket => {
-            if (ticket) {
-                const id = ticket._id
-                Ticket.findByIdAndUpdate(id, body, { new: true })
-                    .then(ticket => {
-                        res.json(ticket)
-                    })
-                    .catch(err => {
-                        res.json(err)
-                    })
-            }
+            res.json(ticket)
+        })
+        .catch(err => {
+            res.json(err)
         })
 }
 
 module.exports.destroy = (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
 
     Ticket.findByIdAndDelete(id)
         .then(ticket => {

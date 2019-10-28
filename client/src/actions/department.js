@@ -1,6 +1,7 @@
 import axios from '../config/axios'
 import { getInitialData } from './InitialData'
 import { setErrors } from './errors'
+import {clearErrors} from './errors'
 
 export const setDepartments = departments => {
     return {
@@ -34,6 +35,7 @@ export const addDepartment = formData => {
                     dispatch(setErrors(response.data.errors, 'department'))
                 } else {
                     dispatch(getInitialData())
+                    dispatch(clearErrors())
                 }
             })
     }

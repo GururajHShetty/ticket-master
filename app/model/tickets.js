@@ -36,7 +36,6 @@ const ticketSchema = new Schema({
     },
     status: {
         type: String,
-        required:true
     },
     resolution: {
         type: String

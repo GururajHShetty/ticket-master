@@ -38,7 +38,7 @@ export const startSetUser = (formData, props) => {
                     const { token } = response.data
                     localStorage.setItem('token', token)
                     dispatch(getInitialData())
-                    props.history.push('/dashboard')
+                    props.history.push('/home')
                 }
             })
     }

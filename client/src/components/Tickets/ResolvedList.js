@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import TicketForm from './Form'
-import {startSetCustomer} from '../../actions/tickets'
+import { startSetCustomer } from '../../actions/tickets'
 
-class TicketList extends React.Component {
+class TicketResolvedList extends React.Component {
 
     handleSubmit = formData => {
         this.props.dispatch(startSetCustomer(formData))
@@ -13,7 +13,7 @@ class TicketList extends React.Component {
     render() {
         return (
             <div className="container" >
-                <Link className="btn btn-success" to="/tickets/resolved" >Resolved</Link>
+                <Link className="btn btn-success" to="/tickets" >Ongoing</Link>
                 <h4>Listing Tickets - {this.props.tickets.length}</h4>
                 <div className="row" >
                     <div className="col-md-8" >
@@ -45,7 +45,7 @@ class TicketList extends React.Component {
                         </table>
                     </div>
                     <div className="col-md-4" >
-                            <TicketForm handleSubmit={this.handleSubmit} />
+                        <TicketForm handleSubmit={this.handleSubmit} />
                     </div>
                 </div>
             </div>
@@ -55,8 +55,8 @@ class TicketList extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        tickets: state.tickets.filter(ticket => ticket.status !== 'Resolved')
+        tickets: state.tickets.filter(ticket => ticket.status === 'Resolved')
     }
 }
 
-export default connect(mapStateToProps)(TicketList)
+export default connect(mapStateToProps)(TicketResolvedList)
