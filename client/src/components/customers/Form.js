@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { connect } from 'react-redux'
+import isEmpty from 'lodash/isEmpty'
+import {clearErrors} from '../../actions/errors'
 
 class CustomerForm extends React.Component {
     constructor(props) {
@@ -33,11 +35,27 @@ class CustomerForm extends React.Component {
             mobile:''
         })
     }
+    
+    componentWillUnmount(){
+        this.props.dispatch(clearErrors())
+    }
 
     render() {
         // {console.log(this.props.customer)}
         return (
             <div>
+                {
+                        !isEmpty(this.props.errors) && (
+                        <div className="alert alert-danger" role="alert">
+                            <ul>
+                                {
+                                    Object.entries(this.props.errors).map((error,i) => {
+                                        return (<li key={i} >{error[0]} : {error[1].message}</li>)
+                                    })
+                                }
+                            </ul>
+                        </div>)
+                    }
                 <Form onSubmit={this.handleSubmit}>
                     <Col md={6}>
                         <FormGroup>
@@ -64,4 +82,10 @@ class CustomerForm extends React.Component {
     }
 }
 
-export default connect()(CustomerForm)
+const mapStateToProps = state => {
+    return {
+        errors : state.formErrors.customer
+    }
+}
+
+export default connect(mapStateToProps)(CustomerForm)

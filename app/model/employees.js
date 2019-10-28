@@ -15,10 +15,15 @@ const employeeSchema = new Schema({
         type : Number,
         required:true
     },
-    department : {
-        type : String,
+    department : { 
+        type : Schema.Types.ObjectId,
         required:true,
         ref:'Department'
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 })
 

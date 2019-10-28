@@ -1,5 +1,7 @@
 import axios from '../config/axios'
-import {getInitialData} from './InitialData'
+import { getInitialData } from './InitialData'
+import { setErrors } from './errors'
+
 
 export const setCustomers = customers => {
     return {
@@ -19,20 +21,30 @@ export const setCustomers = customers => {
 //     }
 // }
 
-export const setCustomer = (formData,props) => {
+export const setCustomer = (formData, props) => {
     return dispatch => {
-        axios.post('/customers',formData)
+        axios.post('/customers', formData, {
+            headers: {
+                'x-auth': localStorage.getItem('token')
+            }
+        })
             .then(response => {
-                dispatch(getInitialData())
-                // props.history.push('/customers')
-                // console.log('setCustomer',response.data)
+                if (response.data.hasOwnProperty('errors')) {
+                    dispatch(setErrors(response.data.errors, 'customer'))
+                } else {
+                    dispatch(getInitialData())
+                }
             })
     }
 }
 
-export const updateCustomer = (formData,id) => {
+export const updateCustomer = (formData, id) => {
     return dispatch => {
-        axios.put(`/customers/${id}`,formData)
+        axios.put(`/customers/${id}`, formData, {
+            headers: {
+                'x-auth': localStorage.getItem('token')
+            }
+        })
             .then(response => {
                 dispatch(getInitialData())
             })
@@ -41,7 +53,11 @@ export const updateCustomer = (formData,id) => {
 
 export const removeCustomer = id => {
     return dispatch => {
-        axios.delete(`/customers/${id}`)
+        axios.delete(`/customers/${id}`, {
+            headers: {
+                'x-auth': localStorage.getItem('token')
+            }
+        })
             .then(response => {
                 dispatch(getInitialData())
             })

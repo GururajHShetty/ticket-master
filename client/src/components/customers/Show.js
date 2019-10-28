@@ -17,11 +17,11 @@ function CustomerShow(props) {
       <h4>Customer Information</h4>
       {props.customer ? (
         <div>
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-subtitle mb-2 text-muted">Name : {props.customer.name}</h4>
-              <h6 class="card-text">Emial : {props.customer.email}</h6>
-              <h6 class="card-text">Mobile : {props.customer.mobile}</h6>
+          <div className="card">
+            <div className="card-body">
+              <h4 className="card-subtitle mb-2 text-muted">Name : {props.customer.name}</h4>
+              <h6 className="card-text">Emial : {props.customer.email}</h6>
+              <h6 className="card-text">Mobile : {props.customer.mobile}</h6>
             </div>
           </div>
           <Link className="btn btn-success" to={`/customers/edit/${props.customer._id}`}>Edit</Link>

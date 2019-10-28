@@ -7,13 +7,13 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
     username: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
         minlength: 5
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
         validate: {
             validator: function (email) {
@@ -26,7 +26,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        require: true,
+        required: true,
         minlength: 6,
         maxlength: 128
     },
@@ -70,14 +70,14 @@ userSchema.statics.findByCredentials = function (email, password) {
                         if (result) {
                             return Promise.resolve(user)
                         } else {
-                            return Promise.reject({ errros: 'invalid email/ password' })
+                            return Promise.reject({ errors: 'invalid email/ password' })
                         }
                     })
                     .catch(err => {
-                        return Promise.reject({ errros: 'invalid email/ password' })
+                        return Promise.reject(err)
                     })
             } else {
-                return Promise.reject({ errros: 'invalid email/ password' })
+                return Promise.reject({ errors: 'invalid email/ password' })
             }
         })
         .catch(err => {

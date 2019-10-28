@@ -1,40 +1,52 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
 const ticketSchema = new Schema({
-    code:{
-        type:Number,
-        default:Number(Date.now())
+    code: {
+        type: Number,
+        default: Number(Date.now())
     },
-    customerName : {
-        type : String,
+    customer: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Customer' 
+    },
+    title: {
+        type: String,
         required:true
     },
-    department:{
-        type : String,
-        required:true,
-        ref:'Department'
+    department: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Department'
+    }, 
+    employee: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Employee'
     },
-    employee:{
-        type : String,
+    priority: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
         required:true
     },
-    priority:{
-        type : String,
-        required:true
+    resolution: {
+        type: String
     },
-    message:{
-        type : String,
-        required:true
-    },
-    status:{
-        type:String
-    },
-    remarks:{
-        type:String
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
 })
 
-const Ticket = mongoose.model('Ticket',ticketSchema)
+const Ticket = mongoose.model('Ticket', ticketSchema)
 module.exports = Ticket

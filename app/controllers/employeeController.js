@@ -2,7 +2,7 @@ const Employee = require('../model/employees')
 
 module.exports.list = (req,res) => {
 
-    Employee.find().populate('department')
+    Employee.find({userId : req.user._id}).populate('department')
     .then(employees => {
         res.json(employees)
     })
@@ -15,6 +15,7 @@ module.exports.create = (req,res) => {
     const {body} = req
 
     const employee = new Employee(body)
+    employee.userId = req.user._id
 
     employee.save()
     .then(employee => {

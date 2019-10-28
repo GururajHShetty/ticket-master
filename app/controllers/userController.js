@@ -55,3 +55,7 @@ module.exports.account = (req, res) => {
     const { user } = req
     res.send(pick(user, ['_id', 'username', 'email']))
 }
+
+// module.exports.redirect = (req, res) => {
+//     res.redirect('http://localhost:3000/users/login')
+// }

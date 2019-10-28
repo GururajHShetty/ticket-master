@@ -5,16 +5,21 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { getInitialData } from './actions/InitialData'
+// import { startGetUser, startRedirect } from './actions/user'
 
 const store = configureStore()
 
 // console.log(store.getState())
 
 store.subscribe(() => {
-    console.log(store.getState(),'reload')
+    console.log(store.getState(), 'reload')
 })
 
-store.dispatch(getInitialData())
+if (localStorage.getItem('token')) {
+    console.log('reloading')
+    store.dispatch(getInitialData())
+    // store.dispatch(startGetUser())
+}
 
 const ele = (
     <Provider store={store} >

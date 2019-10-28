@@ -1,7 +1,7 @@
 const Department = require('../model/department')
 
 module.exports.list = (req,res) => {
-     Department.find()
+     Department.find({userId : req.user._id})
      .then(departments => {
          res.json(departments)
      })
@@ -12,8 +12,8 @@ module.exports.list = (req,res) => {
 
 module.exports.create = (req,res) => {
     const {body} = req
-
     const department = new Department(body)
+    department.userId = req.user._id
 
     department.save()
     .then(department => {
