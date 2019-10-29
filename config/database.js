@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/ticket-master-app',{ useUnifiedTopology: true, useNewUrlParser: true  })
+mongoose.connect('mongo "mongodb+srv://cluster0-a90ax.mongodb.net/test"  --username gururajhshetty',{ useUnifiedTopology: true, useNewUrlParser: true  })
     .then(() => {
         console.log('successfully connected to database')
     })
