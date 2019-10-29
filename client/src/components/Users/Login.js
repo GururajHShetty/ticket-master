@@ -39,15 +39,17 @@ class UserLogin extends React.Component {
 
     render() {
         return (
-            <div>
-                <div >
+            <div className="container" >
+                <div class="row justify-content-center">
+                    <div class="col-3"><h4><span class="badge badge-light">Login to your account!</span></h4></div>
+                </div><hr/>
+                <div className="row" >
                     <div className="col-md-4 offset-md-4 container">
-                        <h4 className="col-md-3 offset-md-3"><span className="badge badge-light">Login to your account</span></h4><hr />
                         {
                             !isEmpty(this.props.errors) && (
                                 <div className="alert alert-danger" role="alert">
-{                                    console.log(this.props.errors)
-}                                    <ul className ="list-unstyled" >
+                                    {console.log(this.props.errors)
+                                    }                                    <ul className="list-unstyled" >
                                         {
                                             Object.entries(this.props.errors).map((error, i) => {
                                                 return (<li key={i} >{error[1]}</li>)

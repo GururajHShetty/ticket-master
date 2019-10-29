@@ -43,7 +43,10 @@ module.exports.logout = (req, res) => {
     const { user, token } = req
     User.findByIdAndUpdate(user._id, { $pull: { tokens: { token: token } } })
         .then(() => {
-            res.send('successfully logged out')
+            res.json({
+                notice: 'successfully logged out',
+                token: token
+            })
         })
         .catch(err => {
             res.json(err)
@@ -57,5 +60,5 @@ module.exports.account = (req, res) => {
 }
 
 // module.exports.redirect = (req, res) => {
-//     res.redirect('http://localhost:3000/users/login')
+//     res.redirect('back')
 // }

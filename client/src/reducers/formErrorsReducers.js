@@ -12,7 +12,7 @@ const formErrorsReducers = (state = formErrors, action) => {
             return {...state,...{[action.model] : {...action.payload}}}
         }
         case 'CLEAR_ERRORS' : {
-            return {}
+            return {} 
         }
         default: {
             return { ...state }

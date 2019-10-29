@@ -6,6 +6,7 @@ import isEmpty from 'lodash/isEmpty'
 
 import UserRegistration from './components/Users/Registration'
 import UserLogin from './components/Users/Login'
+import UserLogout from './components/Users/Logout'
 
 // import TicketMasterDashboard from './components/Dashboard'
 import HomePage from './components/Home/Home'
@@ -29,7 +30,7 @@ import TicketResolvedList from './components/Tickets/ResolvedList'
 
 function App(props) {
   return (
-    <div>
+    <div className="container" >
       <h2><Badge color="success">Ticket Master</Badge></h2>
       <BrowserRouter>
         {
@@ -47,6 +48,7 @@ function App(props) {
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/departments">Departments</Link></li>
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/employees">Employees</Link></li>
                   <li className="breadcrumb-item active" aria-current="page"><Link to="/tickets">Tickets</Link></li>
+                  <li className="breadcrumb-item active" aria-current="page"><Link to="/users/logout">Logout</Link></li>
                 </ol>
               </nav>)
         }
@@ -56,6 +58,7 @@ function App(props) {
         <Switch>
           <Route path="/" component={UserRegistration} exact={true} />
           <Route path="/users/login" component={UserLogin} exact={true} />
+          <Route path="/users/logout" component={UserLogout}/>
 
           <Route path="/home" component={HomePage} />
 

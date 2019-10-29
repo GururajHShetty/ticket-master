@@ -1,6 +1,7 @@
 import React from 'react'
 import TicketMasterDashboard from './Dashboard'
 import { connect } from 'react-redux'
+import Resource from './Resource'
 
 function HomePage(props) {
     const data = []
@@ -19,15 +20,18 @@ function HomePage(props) {
 
     return (
         <div className="container" >
-            <div className="row" >
-                {
-                    props.tickets.length > 0 && (
+            {
+                props.tickets.length > 0 && (
+                    <div className="row" >
                         <div className="col-md-6"  >
                             <TicketMasterDashboard data={data} />
                         </div>
-                    )
-                }
-            </div>
+                        <div className="col-md-6">
+                            <Resource />
+                        </div>
+                    </div>
+                )
+            }
         </div>
     )
 }

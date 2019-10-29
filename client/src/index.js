@@ -11,9 +11,9 @@ const store = configureStore()
 
 // console.log(store.getState())
 
-// store.subscribe(() => {
-//     console.log(store.getState(), 'reload')
-// })
+store.subscribe(() => {
+    console.log(store.getState(), 'reload')
+})
 
 if (localStorage.getItem('token')) {
     console.log('reloading')

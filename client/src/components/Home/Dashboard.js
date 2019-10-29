@@ -13,9 +13,9 @@ class TicketMasterDashboard extends React.Component {
                         data: this.props.data,
                         backgroundColor: [
                             "#F7464A",
-                            "#46BFBD",
+                            "#5E82E6",
                             "#FDB45C",
-                            "#AC64AD"
+                            "#03FC2C"
                         ],
                         hoverBackgroundColor: [
                             "#FF5A5E",
@@ -27,6 +27,10 @@ class TicketMasterDashboard extends React.Component {
                 ]
             }
         }
+    }
+
+    componentWillUnmount(){
+        this.setState({dataPie:{}})
     }
 
     render() {
