@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://gururajhshetty:<Guru%401421>@cluster0-a90ax.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true, useNewUrlParser: true  })
+mongoose.connect('mongodb+srv://gururajhshetty:Guru%401421@cluster0-a90ax.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true, useNewUrlParser: true  })
     .then(() => {
         console.log('successfully connected to database')
     })
