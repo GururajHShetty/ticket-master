@@ -41,8 +41,8 @@ class UserRegistration extends React.Component {
     render() {
         return (
             <div className="container" >
-                <div class="row justify-content-center">
-                    <div class="col-3"><h4><span class="badge badge-light">Create your account!</span></h4></div>
+                <div className="row justify-content-center">
+                    <div className="col-3"><h4><span class="badge badge-light">Create your account!</span></h4></div>
                 </div><hr />
                 <div className="row" >
                     <div className="col-md-4 offset-md-4">
