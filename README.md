@@ -1,6 +1,6 @@
-#Ticket Master
+# Ticket Master
 
-######This is imititaion to a ticketing tool
+###### This is imititaion to a ticketing tool
 
 Here it has 4 modules
 1. Customers
@@ -24,14 +24,14 @@ Here it has 4 modules
 
 Each module gives you a table where all the data will be listed and form to add a record, user can create a ticket and update status/resolution, All the data can be tracked in dashboard, it has pai chart for the ease of visiual analysis.
 
-####CRUD enabled in each modules
+#### CRUD enabled in each modules
 
-##Technology Used
-####Front End
+## Technology Used
+#### Front End
 React, Redux, Bootstrap, Reactstrap.
-####Programming language
+#### Programming language
 Javascript.
-####Backend
+#### Backend
 Node js, Express js, mongoose, MongoDB.
 
 It has user authentication and data will be user specific, I have used token based authentication using jsonwebtoken and bcryptjs for password encryption.
