@@ -41,7 +41,7 @@ It has user authentication and data will be user specific, I have used token bas
 ![Registraion](https://user-images.githubusercontent.com/54133903/68030293-229afd00-fcdf-11e9-97f6-603c526f350d.PNG)
 
 #### Dashboard
-![Dashbord](https://user-images.githubusercontent.com/54133903/68030424-7279c400-fcdf-11e9-8e11-097ace563497.PNG)
+![Dashboard](https://user-images.githubusercontent.com/54133903/68030868-6e9a7180-fce0-11e9-9d5a-75164dab5f88.png)
 
 #### Tickets component
 ![Tickets](https://user-images.githubusercontent.com/54133903/68030466-88878480-fcdf-11e9-8981-0d68b3e6500a.PNG)
