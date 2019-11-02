@@ -37,7 +37,7 @@ function App(props) {
           isEmpty(props.user) ? (
             <div>
               <ol className="breadcrumb">
-                <li className="breadcrumb-item active" aria-current="page"><Link to="/">Registor</Link></li>
+                <li className="breadcrumb-item active" aria-current="page"><Link to="/">Register</Link></li>
                 <li className="breadcrumb-item active" aria-current="page"><Link to="/users/login">Login</Link></li>
               </ol>
             </div>) : (

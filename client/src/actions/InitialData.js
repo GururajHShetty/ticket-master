@@ -37,7 +37,7 @@ export const getInitialData = () => {
                 dispatch(setCustomers(customers.data))
                 dispatch(setDepartments(departments.data))
                 dispatch(setEmployees(employees.data))
-                dispatch(setUser(user))
+                // dispatch(setUser(user))
                 dispatch(setTickets(tickets.data))
             })
             .catch(err => {

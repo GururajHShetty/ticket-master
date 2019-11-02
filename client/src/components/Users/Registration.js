@@ -60,20 +60,20 @@ class UserRegistration extends React.Component {
                         }
                         <form onSubmit={this.handleSubmit} >
                             <div className="input-group-text row">
-                                <label htmlFor="username" className="col-sm-2 col-form-label">Username</label>
-                                <div className="col-sm-10">
+                                <label htmlFor="username" className="col-sm-3 col-form-label">Username</label>
+                                <div className="col-sm-9">
                                     <input type="text" className="form-control" id="username" onChange={this.handleChange} placeholder="username" name="username" value={this.state.username} />
                                 </div>
                             </div>
                             <div className=" input-group-text row">
-                                <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                                <div className="col-sm-10">
+                                <label htmlFor="email" className="col-sm-3 col-form-label">Email</label>
+                                <div className="col-sm-9">
                                     <input type="text" className="form-control" id="email" onChange={this.handleChange} placeholder="someone@email.com" name="email" value={this.state.email} />
                                 </div>
                             </div>
                             <div className="input-group-text row">
-                                <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                                <div className="col-sm-10">
+                                <label htmlFor="password" className="col-sm-3 col-form-label">Password</label>
+                                <div className="col-sm-9">
                                     <input type={this.state.isVisible ? "text" : "password"} className="form-control" id="password" onChange={this.handleChange} placeholder="Password" name="password" value={this.state.password} />
                                 </div>
                             </div>
