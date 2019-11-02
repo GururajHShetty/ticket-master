@@ -36,6 +36,19 @@ Node js, Express js, mongoose, MongoDB.
 
 It has user authentication and data will be user specific, I have used token based authentication using jsonwebtoken and bcryptjs for password encryption.
 
+## screenshots :
+#### Registration page
+![Registraion](https://user-images.githubusercontent.com/54133903/68071537-5a6a7900-fda1-11e9-8066-540d5a1c19c2.PNG)
+
+#### Dashboard
+![Dashboard](https://user-images.githubusercontent.com/54133903/68030868-6e9a7180-fce0-11e9-9d5a-75164dab5f88.png)
+
+#### Tickets component
+![Tickets](https://user-images.githubusercontent.com/54133903/68030466-88878480-fcdf-11e9-8981-0d68b3e6500a.PNG)
+
+#### Employee component
+![Emp](https://user-images.githubusercontent.com/54133903/68030526-b4a30580-fcdf-11e9-8c45-f601593b3eeb.PNG)
+
 -----------------------------------------------------------------------------------------------------------------
 
 
