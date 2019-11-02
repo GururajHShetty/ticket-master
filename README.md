@@ -38,7 +38,7 @@ It has user authentication and data will be user specific, I have used token bas
 
 ## screenshots :
 #### Registration page
-![Registraion](https://user-images.githubusercontent.com/54133903/68030293-229afd00-fcdf-11e9-97f6-603c526f350d.PNG)
+![Registraion](https://user-images.githubusercontent.com/54133903/68071537-5a6a7900-fda1-11e9-8066-540d5a1c19c2.PNG)
 
 #### Dashboard
 ![Dashboard](https://user-images.githubusercontent.com/54133903/68030868-6e9a7180-fce0-11e9-9d5a-75164dab5f88.png)
